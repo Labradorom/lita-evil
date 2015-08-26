@@ -3,7 +3,7 @@ module Lita
     class Evil < Handler
       URL = "https://ajax.googleapis.com/ajax/services/search/images"
 
-      route(/dolphin/) do |response|
+      route(/dolphin/i) do |response|
         http_response = http.get(
           URL,
           v: "1.0",
