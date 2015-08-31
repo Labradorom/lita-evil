@@ -7,7 +7,7 @@ module Lita
         http_response = http.get(
           URL,
           v: "1.0",
-          q: "Tom+Brady",
+          q: "Tom+Brady+courtroom+sketch",
           safe: :moderate,
           rsz: 8
         )
@@ -28,6 +28,10 @@ module Lita
           )
         end
 
+      end
+
+      route /beer.*clock/i do |response|
+        response.reply Time.now
       end
 
       def log_if_debug(message)
