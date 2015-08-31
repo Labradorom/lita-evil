@@ -30,8 +30,37 @@ module Lita
 
       end
 
+      # Figure out where it's beer o'clock. Assumes bot is running on Central Time and we start drinking at 5PM.
       route(/beer.*clock/i) do |response|
-        response.reply Time.now
+        CITIES = [
+          "Vanuatu",
+          "Canberra",
+          "Tokyo",
+          "Beijing",
+          "Hanoi",
+          "Novosibirsk",
+          "Tashkent",
+          "Reunion Island",
+          "Moscow",
+          "Kiev",
+          "Copenhagen",
+          "London",
+          "Greenland",
+          "South Georgia Island",
+          "Rio de Janeiro",
+          "Santiago",
+          "New York",
+          "Chicago",
+          "Denver",
+          "Santa Rosa",
+          "Anchorage",
+          "Honolulu",
+          "American Samoa",
+          "Auckland",
+          "Vanuatu"
+        ]
+
+        response.reply "It's beer o'clock in #{CITIES[Time.now.hour]}!"
       end
 
       def log_if_debug(message)
