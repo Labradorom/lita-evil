@@ -30,7 +30,7 @@ module Lita
 
       end
 
-      route /beer.*clock/i do |response|
+      route(/beer.*clock/i) do |response|
         response.reply Time.now
       end
 
